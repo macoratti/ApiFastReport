@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="08/23/2022 11:54:55" ReportInfo.Modified="08/23/2022 12:02:22" ReportInfo.CreatorVersion="2022.2.0.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqM7gJFg/iaLrqMhRfGy5lGovRkcPIyQ3AGKzMkqVdbTEhF2omEmIJN1MeCF2vJJ/xdZiVJKvCBVF3YKjIN5zy4DH4RzSG3te87HmwUNbTj86LVU364Z2q+Lei7C9ZqpTtcoNrCyx2GGwfHDx48pHOH+u0zA/2jyRBjetUZhE71nYrdUXVMRw2hXQpWx7K2GrGMdxnlOQ7OZ0nQrGm8ngNDg==">
+      <TableDataSource Name="Products" DataType="System.Int32" Enabled="true" TableName="Products">
+        <Column Name="ProductID" DataType="System.Int32"/>
+        <Column Name="ProductName" DataType="System.String"/>
+        <Column Name="SupplierID" Enabled="false" DataType="System.Int32"/>
+        <Column Name="CategoryID" Enabled="false" DataType="System.Int32"/>
+        <Column Name="QuantityPerUnit" Enabled="false" DataType="System.String"/>
+        <Column Name="UnitPrice" DataType="System.Decimal"/>
+        <Column Name="UnitsInStock" DataType="System.Int16"/>
+        <Column Name="UnitsOnOrder" Enabled="false" DataType="System.Int16"/>
+        <Column Name="ReorderLevel" Enabled="false" DataType="System.Int16"/>
+        <Column Name="Discontinued" Enabled="false" DataType="System.Boolean" BindableControl="CheckBox"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8" Fill.Color="LemonChiffon">
+      <TextObject Name="Text1" Left="217.35" Top="9.45" Width="236.25" Height="18.9" Text="Relação de Produtos" HorzAlign="Center" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text2" Top="9.45" Width="94.5" Height="18.9" Text="[Date]" Font="Arial, 10pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35" Fill.Color="WhiteSmoke">
+      <TextObject Name="Text5" Width="94.5" Height="18.9" Text="ProductName" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text7" Left="321.3" Width="94.5" Height="18.9" Text="UnitsInStock" HorzAlign="Right" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text9" Left="595.35" Width="94.5" Height="18.9" Text="UnitPrice" HorzAlign="Right" Font="Arial, 9pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="28.35" DataSource="Products">
+      <TextObject Name="Text4" Top="9.45" Width="226.8" Height="18.9" Text="[Products.ProductName]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text6" Left="255.15" Top="9.45" Width="160.65" Height="18.9" Text="[Products.UnitsInStock]" HorzAlign="Right" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text8" Left="567" Top="9.45" Width="132.3" Height="18.9" Text="[Products.UnitPrice]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" WordWrap="false" Font="Arial, 9pt, style=Bold" Trimming="EllipsisCharacter"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="106.5" Width="718.2" Height="18.9">
+      <TextObject Name="Text3" Left="614.25" Width="94.5" Height="18.9" Text="[PageN]" HorzAlign="Center" Font="Arial, 9pt, style=Bold"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>
